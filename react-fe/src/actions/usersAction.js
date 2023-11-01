@@ -1,5 +1,7 @@
 import axios from "axios";
 
+// Desript what you wanna do
+
 export const GET_ALL_USERS = "GET_ALL_USERS";
 
 export const GET_ONE_USER = "GET_ONE_USER";

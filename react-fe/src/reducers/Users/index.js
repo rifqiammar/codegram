@@ -1,5 +1,6 @@
 import { GET_ONE_USER } from "../../actions/usersAction";
 
+// Nilai Awal
 const initialState = {
   getOneUserResult: false,
   getOneUserLoading: false,

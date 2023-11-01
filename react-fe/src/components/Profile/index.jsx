@@ -1,13 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { getOneUser } from "../../actions/usersAction";
+import React from "react";
+import { useSelector } from "react-redux";
 import Navbar from "../Navbar";
 
 const Profile = () => {
   const { getOneUserResult, getOneUserLoading, getOneUserError } = useSelector((state) => state.UsersReducer);
 
-  const dispatch = useDispatch();
-
+  // Seharusnya ini di simpan di redux
   function getTime(time) {
     const split = time.split("T");
     let dates = split[0].split("-");
@@ -21,11 +19,12 @@ const Profile = () => {
     return `${monthName}, ${day} ${year}`;
   }
 
-  useEffect(() => {
-    // Panggil Action get All Posts
-    const token = localStorage.getItem("token");
-    dispatch(getOneUser(token));
-  }, [dispatch]);
+  // useEffect(() => {
+  // Jika Pakai Redux tidak perlu panggil getOneUser()  lagi cukup panggil redux nya
+  //   // Panggil Action get All Posts
+  //   const token = localStorage.getItem("token");
+  //   // dispatch(getOneUser(token));
+  // }, [dispatch]);
 
   return (
     <div>
